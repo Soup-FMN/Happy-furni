@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+
+    <!-- remix icon cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+    <!-- header start-->
+    <header class="header">
+        <h1>Happy Furni</h1>
+    </header>
+    <!-- header end -->
+
+    <!-- contents start-->
+    <section id="section" class="contents">
+        <div class="left-contents">
+            <ul class="left-contents-list">
+                <li class="left-contents-item">
+                    <div class="item-btn-option">Danh mục</div>
+                    <ul>
+                        <li>
+                            <a href="#">Thêm danh mục</a>
+                        </li>
+                        <li>
+                            <a href="#">Danh sách danh mục</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="left-contents-item">
+                    <div class="item-btn-option">Sản phẩm</div>
+                    <ul>
+                        <li>
+                            <a href="#">Thêm sản phẩm</a>
+                        </li>
+                        <li>
+                            <a href="#">Danh sách sản phẩm</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="left-contents-item">
+                    <div class="item-btn-option">Quản lí đơn hàng</div>
+                    <ul>
+                        <li>
+                            <a href="#">Danh sách đơn hàng</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="left-contents-item">
+                    <div class="item-btn-option">Quản lí người dùng</div>
+                    <ul>
+                        <li>
+                            <a href="#">Thêm người dùng</a>
+                        </li>
+                        <li>
+                            <a href="#">Danh sách người dùng</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="right-contents">
+            <div class="right-contents-item right-contents-product_insert">
+                <h1>Thêm sản phẩm</h1>
+                <form action="" method="POST">
+                    <input name="text" required
+                    type="text" placeholder="Nhập tên sản phẩm">
+                    <select name="" id="">
+                        <option value="#">--Chọn Danh Mục--</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="#">--Chọn Loại Sản Phẩm--</option>
+                    </select>
+                    <input type="text" placeholder="Giá sản phẩm">
+                    <input type="text" placeholder="Giá khuyến mãi">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Mô tả sản phẩm"></textarea>
+                    <input type="file" placeholder="Ảnh sản phẩm">
+                    <input type="file" placeholder="Ảnh chi tiết">
+                    <button class="btn" type="submit">Thêm</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- contents end-->
+
+
+    <!-- script start -->
+    <script>
+        const options = document.querySelectorAll('.left-contents > ul > li > .item-btn-option');
+        options.forEach(function(option) {
+            option.addEventListener('click', function(e) {
+                var option_active = document.querySelector('.left-contents > ul > li > .item-btn-option.active');
+                if(option_active && option_active != e.target) {
+                    option_active.classList.remove('active');
+                }
+                option.classList.toggle('active');
+            })
+        }) 
+
+        // const delete_btns = document.querySelectorAll('.btn.delete')
+        // delete_btns.forEach(function(btn) {
+        //     btn.addEventListener('click', function(e) {
+        //         var result = confirm('Are you sure about that (⌐■_■)????????');
+        //         if(!result) {
+        //             e.preventDefault();
+        //         }
+        //     })
+        // })
+    </script>
+    <!-- script end -->
+</body>
+</html>
